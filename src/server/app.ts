@@ -1,6 +1,5 @@
 import express from "express";
 import morgan from "morgan";
-import auth from "./middlewares/auth.js";
 import { generalError, notFoundError } from "./middlewares/errors.js";
 import itemsRouter from "./routers/itemsRouters/itemsRouters.js";
 import usersRouter from "./routers/usersRouters/usersRouters.js";
@@ -12,9 +11,9 @@ app.disable("x-powered-by");
 app.use(morgan("dev"));
 
 app.use(express.json());
-
+debugger;
 app.use("/users", usersRouter);
-app.use("/items", auth, itemsRouter);
+app.use("/items", itemsRouter);
 
 app.use(notFoundError);
 app.use(generalError);
