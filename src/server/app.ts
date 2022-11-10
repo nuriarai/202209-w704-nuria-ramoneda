@@ -11,7 +11,7 @@ app.disable("x-powered-by");
 app.use(morgan("dev"));
 
 app.use(express.json());
-debugger;
+
 app.use("/users", usersRouter);
 app.use("/items", itemsRouter);
 
